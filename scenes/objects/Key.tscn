@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/passagens.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Key.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.68113, 3.67204 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.39477, 6.14971 )
+
+[node name="Key" type="RigidBody2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.471939, -0.58992 )
+texture = ExtResource( 1 )
+hframes = 7
+frame = 4
+
+[node name="AreaToGrab" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaToGrab"]
+shape = SubResource( 2 )

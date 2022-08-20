@@ -9,7 +9,8 @@ func _ready() -> void:
 		gates[i] = get_node(gates[i]) as PressureGate
 
 func _on_Area2D_body_entered(_body : Node) -> void:
-	sprite.frame = 1
-	area.queue_free()
-	for gate in gates:
-		gate.free()
+	if _body.name == 'Player':
+		sprite.frame = 1
+		area.queue_free()
+		for gate in gates:
+			gate.free()

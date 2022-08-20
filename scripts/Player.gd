@@ -22,9 +22,9 @@ var dir := 1
 
 var canPick := true
 
+export var picking := false
 export var interecting := false
 export var handPosition : Vector2
-
 
 onready var jetParticles := $Jet/Particles2D
 onready var jetNode := $Jet
@@ -37,18 +37,17 @@ onready var animationState = animationTree.get('parameters/playback')
 func _ready() -> void:
 	animationTree.active = true
 
-
 func _process(delta: float) -> void:
 	input()
 
-
 func _physics_process(delta) -> void:
-	
 	_animation()
 	_player_movement(delta)
 	GameEvents.handPosition = $Node2D/hand.global_position
 
 func input() -> void:
+	
+	#direção de movimento do player
 	dir = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	
 	# Correndo
@@ -68,6 +67,19 @@ func input() -> void:
 		interecting = true
 	else:
 		interecting = false
+	
+	if Input.is_action_pressed("pickup"):
+		picking = true
+	else:
+		picking = false
+	
+	#Save e Reaload
+	if Input.is_action_just_pressed("Save"):
+		GameEvents.save_game()
+
+	if Input.is_action_just_pressed("Reload"):
+		GameEvents.load_game()
+
 
 func _player_movement(delta) -> void:
 
@@ -103,7 +115,6 @@ func _player_movement(delta) -> void:
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 
-
 func _animation() -> void:
 	if dir != 0:
 		animationTree.set('parameters/Idle/blend_position', dir)
@@ -129,3 +140,6 @@ func _animation() -> void:
 			animationState.travel('JetUp')
 		else:
 			animationState.travel('Jump')
+
+func die() -> void:
+	print('morri')

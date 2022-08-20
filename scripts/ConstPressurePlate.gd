@@ -21,5 +21,5 @@ func _physics_process(delta: float) -> void:
 		sprite.frame = 2
 		for gate in gates:
 			gate.close()
-		
+	
 
