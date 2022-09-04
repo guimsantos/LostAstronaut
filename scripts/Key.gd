@@ -8,7 +8,7 @@ func _physics_process(delta: float) -> void:
 	
 	# lida com o
 	if picked:
-		self.position = get_node('../Player/Node2D/hand').global_position
+		self.position = $"%Player/Node2D/hand".global_position
 		self.rotation_degrees = 0
 		if GameEvents.playerDir == 1:
 			self.scale.x = 1
@@ -17,12 +17,12 @@ func _physics_process(delta: float) -> void:
 			self.scale.x = -1
 	
 	
-	if get_node('../Player').picking == true:
+	if $'%Player'.picking == true:
 		var bodies = $AreaToGrab.get_overlapping_bodies()
 		for body in bodies:
-			if body.name == "Player" and get_node('../Player').canPick == true:
+			if body.name == "Player" and $'%Player'.canPick == true:
 				picked = true
-				get_node('../Player').canPick = false
+				$'%Player'.canPick = false
 				self.gravity_scale = 0
 			if body.name == 'KeyGate':
 				body.queue_free()
@@ -30,9 +30,9 @@ func _physics_process(delta: float) -> void:
 	
 	elif picked:
 		picked = false
-		get_node('../Player').canPick = true
-		if get_node('../Player').velocity.y != 0:
-			apply_impulse(Vector2(), Vector2(get_node('../Player').velocity.x, get_node('../Player').velocity.y))
+		$'%Player'.canPick = true
+		if $'%Player'.velocity.y != 0:
+			apply_impulse(Vector2(), Vector2($'%Player'.velocity.x, $'%Player'.velocity.y))
 		else:
-			apply_impulse(Vector2(), Vector2(get_node('../Player').velocity.x, -5))
+			apply_impulse(Vector2(), Vector2($'%Player'.velocity.x, -5))
 		self.gravity_scale = 1
