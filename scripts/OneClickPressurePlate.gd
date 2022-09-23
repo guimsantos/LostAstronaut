@@ -5,7 +5,7 @@ onready var area := get_node("Area2D")
 export (Array, NodePath) onready var gates
 
 func _ready() -> void:
-	for i in gates.size():
+	or i in gates.size():
 		gates[i] = get_node(gates[i]) as PressureGate
 
 func _on_Area2D_body_entered(_body : Node) -> void:

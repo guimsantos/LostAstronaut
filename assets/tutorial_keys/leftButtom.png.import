@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mouseRigthButtom.png-e053f3c60a2695441a25a8b94afb2098.stex"
+path="res://.import/leftButtom.png-62663d4d0c9c04c040b342b787bc5f07.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TutorialKeys/mouseRigthButtom.png"
-dest_files=[ "res://.import/mouseRigthButtom.png-e053f3c60a2695441a25a8b94afb2098.stex" ]
+source_file="res://assets/tutorial_keys/leftButtom.png"
+dest_files=[ "res://.import/leftButtom.png-62663d4d0c9c04c040b342b787bc5f07.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

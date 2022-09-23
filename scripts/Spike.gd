@@ -24,12 +24,12 @@ func _on_Area2D_body_entered(body: Node) -> void:
 	if body.name == "Player":
 		if onCeiling:
 			if body.global_position.y > $Area2D/CollisionShape2D.global_position.y + 3:
-				print('morreu ala kkkkk') #enviar sinal pro player q morreu
+				$"%Player".die() #enviar sinal pro player q morreu
 			else:
-				print('slk o cara é preparado')
-
+				pass
+		
 		else:
 			if body.global_position.y < $Area2D/CollisionShape2D.global_position.y:
-				print('morreu ala kkkkk') #enviar sinal pro player q morreu
+				$"%Player".die() #enviar sinal pro player q morreu
 			else:
-				print('slk o cara é preparado')
+				pass

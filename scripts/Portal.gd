@@ -8,7 +8,7 @@ export (String, 'Right', 'Left') var teleportTo := 'Right'
 onready var rPosition = $RightPosition.global_position
 onready var lPosition = $LeftPosition.global_position
 
-onready var playerNode = get_node('../../Player') as Player
+onready var playerNode = $'%Player' as Player
 
 var entered := false
 var interact := false

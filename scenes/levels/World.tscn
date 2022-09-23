@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://assets/TileSet1.tres" type="TileSet" id=1]
-[ext_resource path="res://assets/background.png" type="Texture" id=2]
+[ext_resource path="res://assets/environment/TileSet1.tres" type="TileSet" id=1]
+[ext_resource path="res://assets/environment/background.png" type="Texture" id=2]
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/objects/Key.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/objects/PressureGate.tscn" type="PackedScene" id=5]

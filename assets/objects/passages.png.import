@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/A_Key.png-0cfdbb69e0ebda4afb73fd3fcd97e92e.stex"
+path="res://.import/passages.png-6aab7f8858d0cd7e80c39477263daf32.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TutorialKeys/A_Key.png"
-dest_files=[ "res://.import/A_Key.png-0cfdbb69e0ebda4afb73fd3fcd97e92e.stex" ]
+source_file="res://assets/objects/passages.png"
+dest_files=[ "res://.import/passages.png-6aab7f8858d0cd7e80c39477263daf32.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

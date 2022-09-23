@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/E_Key.png-fcf5b5383d5b4d9891f15eae9fffa45d.stex"
+path="res://.import/D_Key.png-ac6baf83c7cb2e19eb4deb9987270e9e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TutorialKeys/E_Key.png"
-dest_files=[ "res://.import/E_Key.png-fcf5b5383d5b4d9891f15eae9fffa45d.stex" ]
+source_file="res://assets/tutorial_keys/D_Key.png"
+dest_files=[ "res://.import/D_Key.png-ac6baf83c7cb2e19eb4deb9987270e9e.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -9,13 +9,14 @@ const MAX_WALK_SPEED := 80
 const MAX_RUN_SPEED := 120
 
 var gravity: = 200
-var jumpForce := 150
+var jumpForce := 120
 var jetUses := 1
-var jetForce := jumpForce + 50
+var jetForce := jumpForce * 1.25
+var canUseJet := false
+var jetting := false
 
 var jumping := false
 var running := false
-var jeting := false
 
 var velocity := Vector2.ZERO
 var dir := 1
@@ -32,6 +33,8 @@ onready var jetNode := $Jet
 onready var animationPlayer := $AnimationPlayer
 onready var animationTree := $AnimationTree
 onready var animationState = animationTree.get('parameters/playback')
+
+onready var coyoteTimer := $CoyoteTimer
 
 
 func _ready() -> void:
@@ -63,7 +66,7 @@ func input() -> void:
 		jumping = false
 	
 	# interagir
-	if Input.is_action_pressed("interact"):
+	if Input.is_action_just_pressed("interact"):
 		interecting = true
 	else:
 		interecting = false
@@ -82,7 +85,7 @@ func input() -> void:
 
 
 func _player_movement(delta) -> void:
-
+	
 	if dir != 0:
 		jetNode.scale.x = dir
 		GameEvents.playerDir = dir
@@ -99,21 +102,33 @@ func _player_movement(delta) -> void:
 	
 	velocity.y += gravity * delta
 	
-	if is_on_floor():
-		jetUses = 1
-		jeting = false
-		if jumping:
-			velocity.y = - jumpForce
-	
 	# Verifica se pode usar o jato
-	if not is_on_floor():
-		if jetUses > 0 and jumping:
-			jetUses -= 1
-			velocity.y = - jetForce
-			jetParticles.restart()
-			jeting = true
+	if canUseJet:
+		if not is_on_floor() and coyoteTimer.is_stopped() and jumping:
+			if jetUses > 0:
+				jetUses -= 1
+				velocity.y = - jetForce
+				jetParticles.restart()
+				jetting = true
+				canUseJet = false
 	
+	#Verifica se pode pular
+	if is_on_floor() or not coyoteTimer.is_stopped():
+		jetUses = 1
+		if jumping:
+			coyoteTimer.stop()
+			velocity.y = - jumpForce
+			jetting = false
+			canUseJet = true
+		
+	if coyoteTimer.is_stopped():
+		canUseJet = true
+	
+	var wasOnFloor = is_on_floor()
 	velocity = move_and_slide(velocity, Vector2.UP)
+	
+	if not is_on_floor() and wasOnFloor and not jumping:
+		coyoteTimer.start()
 
 func _animation() -> void:
 	if dir != 0:
@@ -123,7 +138,7 @@ func _animation() -> void:
 		animationTree.set('parameters/Jump/blend_position', dir)
 		animationTree.set('parameters/JetFire/blend_position', dir)
 		animationTree.set('parameters/JetUp/blend_position', dir)
-		animationTree.set('parameters/Die/blend_position', dir)
+		
 		
 		if running:
 			animationState.travel('Run')
@@ -136,10 +151,10 @@ func _animation() -> void:
 		animationState.travel('Idle')
 	
 	if not is_on_floor():
-		if velocity.y < 0 and jeting:
+		if velocity.y < 0 and jetting:
 			animationState.travel('JetUp')
 		else:
 			animationState.travel('Jump')
 
 func die() -> void:
-	print('morri')
+	get_tree().reload_current_scene()

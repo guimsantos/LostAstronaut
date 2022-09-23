@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Lost Astronaut"
-run/main_scene="res://scenes/levels/World.tscn"
+run/main_scene="res://scenes/levels/Tutorial.tscn"
 config/icon="res://icon.png"
 
 [autoload]

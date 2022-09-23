@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background.png-1fdba8b6a966ce2c2ffc607f7c096e95.stex"
+path="res://.import/upButtom.png-4cda2246168c861c039d91fd2ccc9b69.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background.png"
-dest_files=[ "res://.import/background.png-1fdba8b6a966ce2c2ffc607f7c096e95.stex" ]
+source_file="res://assets/tutorial_keys/upButtom.png"
+dest_files=[ "res://.import/upButtom.png-4cda2246168c861c039d91fd2ccc9b69.stex" ]
 
 [params]
 

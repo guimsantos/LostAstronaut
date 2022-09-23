@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/upButtom.png-52bbc431489401947640c5413deddc20.stex"
+path="res://.import/background.png-1c1a457e1347b15f4683651a73442897.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TutorialKeys/upButtom.png"
-dest_files=[ "res://.import/upButtom.png-52bbc431489401947640c5413deddc20.stex" ]
+source_file="res://assets/environment/background.png"
+dest_files=[ "res://.import/background.png-1c1a457e1347b15f4683651a73442897.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

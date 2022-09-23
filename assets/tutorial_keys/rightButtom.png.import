@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/W_Key.png-47261853d7a43e087e0417a71b9b9562.stex"
+path="res://.import/rightButtom.png-332e405a55a8dd83b55fd6afd4cbf70a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TutorialKeys/W_Key.png"
-dest_files=[ "res://.import/W_Key.png-47261853d7a43e087e0417a71b9b9562.stex" ]
+source_file="res://assets/tutorial_keys/rightButtom.png"
+dest_files=[ "res://.import/rightButtom.png-332e405a55a8dd83b55fd6afd4cbf70a.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
